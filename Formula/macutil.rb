@@ -21,6 +21,10 @@ class Macutil < Formula
       from processes without Location access, so macutil-wifi will show blank names.
       The cask includes the helper app that fixes this:
         brew uninstall macutil && brew install --cask l-castel/tap/macutil
+
+      Theme: built-in Tokyo Night, or edit ~/.config/macutil/theme.toml.
+      If matugen is installed, the first macutil launch asks whether it may add its
+      template to your matugen config (or run: macutil setup-matugen).
     EOS
   end
 

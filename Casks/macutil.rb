@@ -26,5 +26,11 @@ cask "macutil" do
     run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Macutil.app"], must_succeed: false
   end
 
+  caveats <<~EOS
+    Theme: built-in Tokyo Night, or edit ~/.config/macutil/theme.toml.
+    If matugen is installed, the first macutil launch asks whether it may add its
+    template to your matugen config (or run: macutil setup-matugen).
+  EOS
+
   zap trash: "~/.config/macutil"
 end
