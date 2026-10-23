@@ -1,6 +1,6 @@
 cask "macutil" do
-  version "0.1.0"
-  sha256 "e81821d3993b3b0d9324604bf13999023f513575d1dc73b0fc75d702ca49c3e5"
+  version "0.2.0"
+  sha256 "ba57c57147f78d18c765b024b27a2df3ec78eebdbcf5fbabf9a937be5474c7dc"
 
   url "https://github.com/l-castel/macutil/releases/download/v#{version}/Macutil-#{version}-arm64.zip"
   name "macutil"
