@@ -1,5 +1,5 @@
 class Macutil < Formula
-  desc "WiFi, Bluetooth and Tailscale terminal utilities for macOS"
+  desc "WiFi, Bluetooth and Tailscale terminal utilities"
   homepage "https://github.com/l-castel/macutil"
   url "https://github.com/l-castel/macutil/archive/refs/tags/v0.1.0.tar.gz"
   sha256 "ba493f666d8cb87335c4d7dd2454c065d321a2acddab30a925f7f878d56f9abb"

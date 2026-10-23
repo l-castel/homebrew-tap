@@ -4,7 +4,7 @@ cask "macutil" do
 
   url "https://github.com/l-castel/macutil/releases/download/v#{version}/Macutil-#{version}-arm64.zip"
   name "macutil"
-  desc "WiFi, Bluetooth and Tailscale terminal utilities for macOS"
+  desc "WiFi, Bluetooth and Tailscale terminal utilities"
   homepage "https://github.com/l-castel/macutil"
 
   livecheck do
@@ -12,9 +12,8 @@ cask "macutil" do
     strategy :github_latest
   end
 
-  conflicts_with formula: "macutil"
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Macutil.app"
   binary "#{appdir}/Macutil.app/Contents/MacOS/macutil"
@@ -23,9 +22,8 @@ cask "macutil" do
   binary "#{appdir}/Macutil.app/Contents/MacOS/macutil-ts"
 
   # The app is ad-hoc signed, not notarized, so clear the download quarantine flag.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Macutil.app"]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Macutil.app"], must_succeed: false
   end
 
   zap trash: "~/.config/macutil"
