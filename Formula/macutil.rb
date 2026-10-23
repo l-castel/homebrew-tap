@@ -9,8 +9,6 @@ class Macutil < Formula
   depends_on "rust" => :build
   depends_on :macos
 
-  conflicts_with cask: "macutil"
-
   def install
     %w[launcher wifi bt ts].each do |crate|
       system "cargo", "install", *std_cargo_args(path: "crates/#{crate}")
