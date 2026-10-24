@@ -1,8 +1,8 @@
 class Macutil < Formula
   desc "WiFi, Bluetooth, Tailscale and audio terminal utilities"
   homepage "https://github.com/l-castel/macutil"
-  url "https://github.com/l-castel/macutil/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "5f4bce92da54cb57b8fe8d631cb640136799e81768692d5935955cc361d1a407"
+  url "https://github.com/l-castel/macutil/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "d6063bcd7304289bb59ee0717e4d9ac279ada1f4e802e93e4c22811dc8b79d18"
   license "MIT"
   head "https://github.com/l-castel/macutil.git", branch: "main"
 
