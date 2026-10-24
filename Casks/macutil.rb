@@ -1,10 +1,10 @@
 cask "macutil" do
-  version "0.2.0"
-  sha256 "ba57c57147f78d18c765b024b27a2df3ec78eebdbcf5fbabf9a937be5474c7dc"
+  version "0.3.0"
+  sha256 "995c4b456de0970647cbde0213b4c20b98b67d790edf6d5f2e834d0b453fb276"
 
   url "https://github.com/l-castel/macutil/releases/download/v#{version}/Macutil-#{version}-arm64.zip"
   name "macutil"
-  desc "WiFi, Bluetooth and Tailscale terminal utilities"
+  desc "WiFi, Bluetooth, Tailscale and audio terminal utilities"
   homepage "https://github.com/l-castel/macutil"
 
   livecheck do
@@ -20,6 +20,7 @@ cask "macutil" do
   binary "#{appdir}/Macutil.app/Contents/MacOS/macutil-wifi"
   binary "#{appdir}/Macutil.app/Contents/MacOS/macutil-bt"
   binary "#{appdir}/Macutil.app/Contents/MacOS/macutil-ts"
+  binary "#{appdir}/Macutil.app/Contents/MacOS/macutil-audio"
 
   # The app is ad-hoc signed, not notarized, so clear the download quarantine flag.
   postflight_steps do
