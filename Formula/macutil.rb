@@ -1,8 +1,8 @@
 class Macutil < Formula
   desc "WiFi, Bluetooth, Tailscale and audio terminal utilities"
   homepage "https://github.com/l-castel/macutil"
-  url "https://github.com/l-castel/macutil/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "d6063bcd7304289bb59ee0717e4d9ac279ada1f4e802e93e4c22811dc8b79d18"
+  url "https://github.com/l-castel/macutil/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "50a7ba7e896036582c6cee8ecdb22c4b09b9dbd3fb7b81d1cc3fb10e97dcb51d"
   license "MIT"
   head "https://github.com/l-castel/macutil.git", branch: "main"
 
@@ -13,14 +13,15 @@ class Macutil < Formula
     %w[launcher wifi bt ts audio].each do |crate|
       system "cargo", "install", *std_cargo_args(path: "crates/#{crate}")
     end
+    # macOS only reveals WiFi network names to apps with Location access; this helper app
+    # holds it. macutil-wifi looks for it in ../libexec.
+    system "scripts/make-helper.sh", bin/"macutil-wifi", libexec
   end
 
   def caveats
     <<~EOS
-      This formula installs the command line tools only. macOS hides WiFi network names
-      from processes without Location access, so macutil-wifi will show blank names.
-      The cask includes the helper app that fixes this:
-        brew uninstall macutil && brew install --cask l-castel/tap/macutil
+      WiFi network names need Location access: run macutil-wifi, press s, and allow
+      MacutilLocation. macOS asks again after each upgrade.
 
       Theme: built-in Tokyo Night, or edit ~/.config/macutil/theme.toml.
       If matugen is installed, the first macutil launch asks whether it may add its
@@ -32,5 +33,6 @@ class Macutil < Formula
     %w[macutil macutil-wifi macutil-bt macutil-ts macutil-audio].each do |tool|
       assert_predicate bin/tool, :executable?
     end
+    assert_predicate libexec/"MacutilLocation.app/Contents/MacOS/macutil-wifi", :executable?
   end
 end
