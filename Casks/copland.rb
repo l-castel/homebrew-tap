@@ -7,7 +7,7 @@ cask "copland" do
   desc "Terminal-styled Navidrome client"
   homepage "https://github.com/l-castel/homebrew-tap"
 
-  depends_on macos: ">= :tahoe"
+  depends_on macos: :tahoe
 
   app "Copland.app"
 
