@@ -7,6 +7,18 @@ cask "copland" do
   desc "Terminal-styled Navidrome client"
   homepage "https://github.com/l-castel/homebrew-tap"
 
+  # Releases are tagged copland-<version>-<build>; the tap's other releases are macutil's.
+  livecheck do
+    url :url
+    regex(/^copland-(\d+(?:\.\d+)+)-(\d+\.\d+)$/i)
+    strategy :github_releases do |json, regex|
+      json.map do |release|
+        match = release["tag_name"]&.match(regex)
+        "#{match[1]},#{match[2]}" if match
+      end
+    end
+  end
+
   depends_on macos: :tahoe
 
   app "Copland.app"
