@@ -1,6 +1,6 @@
 cask "kino" do
-  version "1.0,1"
-  sha256 "d0f4b1a644136bd16f0df5d86884512810a4c10d9dc41efcba9a246854d32502"
+  version "1.0,20261116.1141"
+  sha256 "be7af52f004b4384565d0cb080cfcac5b1f0d9609c3084630f355909f50ee09b"
 
   url "https://github.com/l-castel/homebrew-tap/releases/download/kino-#{version.csv.first}-#{version.csv.second}/Kino-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Kino"
