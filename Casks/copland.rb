@@ -1,8 +1,8 @@
 cask "copland" do
-  version "1.0"
-  sha256 "d0c08dba8f79450a276d90cbde3337bec4e87bbcc33b7cbcb0f952ce9b9050a9"
+  version "1.0,20261116.1118"
+  sha256 "8614e66ddd548d631668e27b98c2d59f5a6342be2f837dd3f16abe18becae8a2"
 
-  url "https://github.com/l-castel/homebrew-tap/releases/download/copland-#{version}/Copland-#{version}.dmg"
+  url "https://github.com/l-castel/homebrew-tap/releases/download/copland-#{version.csv.first}-#{version.csv.second}/Copland-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Copland"
   desc "Terminal-styled Navidrome client"
   homepage "https://github.com/l-castel/homebrew-tap"
