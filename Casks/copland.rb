@@ -1,6 +1,6 @@
 cask "copland" do
-  version "1.0,20261116.1118"
-  sha256 "8614e66ddd548d631668e27b98c2d59f5a6342be2f837dd3f16abe18becae8a2"
+  version "1.0,20261117.1703"
+  sha256 "50e514a42ee6db0975c36ee30a799f87c6ab1be74c8a495f3862be9e27875f3f"
 
   url "https://github.com/l-castel/homebrew-tap/releases/download/copland-#{version.csv.first}-#{version.csv.second}/Copland-#{version.csv.first}-#{version.csv.second}.dmg"
   name "Copland"
