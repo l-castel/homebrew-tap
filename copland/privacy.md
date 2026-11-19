@@ -23,7 +23,7 @@ Signing out removes the password and server details. Deleting the app removes ev
 
 Copland connects only to the Navidrome server you sign in to. It sends that server what's needed to play your music:
 your login, what you browse and search for, the songs you play (so the server can keep play counts, and scrobble them
-if you've set that up on the server), and changes you make to playlists and favorites.
+if you've set that up on the server), and changes you make to playlists.
 
 That server is run by you or whoever gave you your account, not by Copland's developer, and its own privacy practices
 apply to what it receives.
